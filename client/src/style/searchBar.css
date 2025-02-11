@@ -1,0 +1,37 @@
+.mainDiv {
+    position: relative;
+}
+
+.searchBarDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.searchBar {
+    font-family: Lexend Deca;
+    font-weight: 300;
+    width: 50%;
+}
+
+.searchBarDiv > button {
+    margin-left: 10px;
+    width: 30px;
+}
+
+.searchBarDiv > button:hover {
+    background-color: #064f79;
+}
+
+.autoCompleteDiv {
+    position: absolute;
+    top: 30px;
+    left: 80px;
+}
+
+.autoCompleteDiv > ul {
+    list-style: none;
+}
+
+.autoCompleteDiv > ul > li {
+    margin-bottom: 10px;
+}
