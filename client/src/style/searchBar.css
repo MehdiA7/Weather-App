@@ -25,13 +25,33 @@
 .autoCompleteDiv {
     position: absolute;
     top: 30px;
-    left: 80px;
+    left: 78px;
 }
 
 .autoCompleteDiv > ul {
+    flex-direction: column;
     list-style: none;
+    border: 1px solid;
+    width: 202px;
 }
 
 .autoCompleteDiv > ul > li {
+    padding: 1%;
+    display: flex;
+    justify-content: left;
+    margin: auto;
+    border: 1px solid;
+    height: 30px;
     margin-bottom: 10px;
+    text-align: center;
+}
+
+.autoCompleteDiv > ul > li:hover {
+    background-color: aliceblue;
+}
+
+.autoCompleteDiv > ul > li > a {
+    text-decoration: none;
+    color: black;
+    font-family: Space mono;
 }

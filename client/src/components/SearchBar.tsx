@@ -7,6 +7,11 @@ type SearchBarProps = {
 
 const SearchBar: FC<SearchBarProps> = ({ belgianCities }) => {
     const [cityInput, setCityInput] = useState<string>("");
+
+    const sendCity = (city:string) => {
+        console.log(city)
+    };
+
     return (
         <div className="mainDiv">
             <div className="searchBarDiv">
@@ -21,7 +26,13 @@ const SearchBar: FC<SearchBarProps> = ({ belgianCities }) => {
             </div>
             <div className="autoCompleteDiv">
                 <ul key={Date.now()}>
-                    {belgianCities.map((e) => <li>{e}</li>)}
+                    {belgianCities
+                        .filter((city) => city.includes(cityInput))
+                        .map((city, index) => (
+                            <li key={index} onClick={() => sendCity(city)}>
+                                <a>{city}</a>
+                            </li>
+                        ))}
                 </ul>
             </div>
         </div>
