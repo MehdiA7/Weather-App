@@ -1,0 +1,36 @@
+.cardMeteoDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.cardMeteo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.cardMeteo > h1 {
+    margin: auto;
+}
+
+.cardMeteo > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    list-style: none;
+}
+
+.cardMeteo > ul > li {
+    width: 180px;
+    margin: 5px;
+    background-color: gainsboro;
+    border-radius: 10px;
+}
+
+.cardMeteo > ul > li > img {
+    width: 100px;
+}

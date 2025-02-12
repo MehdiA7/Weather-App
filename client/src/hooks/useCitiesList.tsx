@@ -1,7 +1,6 @@
-import { useState } from "react";
 
 const useOpenWeather = () => {
-    const [belgianCities, setBelgianCities] = useState<string[]>([
+    const belgianCities = [
         "Anvers (Anwerp)",
         "Arlon",
         "Aspirant",
@@ -86,7 +85,7 @@ const useOpenWeather = () => {
         "Wevelgem",
         "Zele",
         "Zinnik",
-    ]);
+    ];
 
     return {
         belgianCities

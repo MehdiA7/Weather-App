@@ -3,13 +3,14 @@ import "../style/searchBar.css";
 
 type SearchBarProps = {
     belgianCities: string[];
+    exportCityName: (city:string) => void
 };
 
-const SearchBar: FC<SearchBarProps> = ({ belgianCities }) => {
+const SearchBar: FC<SearchBarProps> = ({ belgianCities, exportCityName }) => {
     const [cityInput, setCityInput] = useState<string>("");
 
-    const sendCity = (city:string) => {
-        console.log(city)
+    const sendCity = (city: string) => {
+        exportCityName(city)
     };
 
     return (
@@ -18,22 +19,24 @@ const SearchBar: FC<SearchBarProps> = ({ belgianCities }) => {
                 <input
                     className="searchBar"
                     type="text"
-                    placeholder="Type your city..."
+                    placeholder="Choose your city in the list..."
                     value={cityInput}
                     onChange={(e) => setCityInput(e.target.value)}
                 />
-                <button>🔍</button>
             </div>
+            {/* List of cities */}
             <div className="autoCompleteDiv">
-                <ul key={Date.now()}>
-                    {belgianCities
-                        .filter((city) => city.includes(cityInput))
-                        .map((city, index) => (
-                            <li key={index} onClick={() => sendCity(city)}>
-                                <a>{city}</a>
-                            </li>
-                        ))}
-                </ul>
+                {cityInput && (
+                    <ul key={Date.now()}>
+                        {belgianCities
+                            .filter((city) => city.includes(cityInput))
+                            .map((city, index) => (
+                                <li key={index} onClick={() => sendCity(city)}>
+                                    <a>{city}</a>
+                                </li>
+                            ))}
+                    </ul>
+                )}
             </div>
         </div>
     );
